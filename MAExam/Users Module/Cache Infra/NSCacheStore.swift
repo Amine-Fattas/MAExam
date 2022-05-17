@@ -25,7 +25,7 @@ class NSCacheStore : CacheStore {
             completion(.success(data))
         }
         else {
-            completion(.failure(NSError(domain: "Empty Cache", code: 404)))
+            completion(.failure(NSError(domain: "Cannot load users", code: 404)))
         }
     }
 }

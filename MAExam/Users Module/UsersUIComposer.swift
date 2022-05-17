@@ -22,8 +22,8 @@ class UsersUIComposer {
         }
         let presenter = UsersPresenter(
             title: "Users",
-            remoteInteractor: remoteInteractor,
-            localInteractor: localInteractor,
+            interactor: UsersInteractorWithFallback(primary: remoteInteractor,
+                                                    fallback: localInteractor),
             onUserSelection: onUserSelection)
         let vc = UsersVC(presenter: presenter, nibName: "UsersVC", bundle: nil)
         return vc

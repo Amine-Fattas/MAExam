@@ -7,6 +7,21 @@
 
 import Foundation
 
+struct UsersInteractorWithFallback: UsersInteractor {
+    let primary : UsersInteractor
+    let fallback: UsersInteractor & UsersSaver
+    func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
+        primary.load{ result in
+            switch result {
+            case .success:
+                completion(result)
+            case .failure:
+                fallback.load(completion: completion)
+            }
+        }
+    }
+}
+
 protocol UsersSaver {
     func save(users: [UserItem])
 }
@@ -36,8 +51,8 @@ class LocalUsersInteractor : UsersInteractor {
                 catch {
                     completion(.failure(NSError(domain: "Invalid Data", code: 0)))
                 }
-            case .failure(_):
-                completion(.failure(NSError(domain: "Empty Cache", code: 404)))
+            case let .failure(error):
+                completion(.failure(error))
             }
         })
     }
