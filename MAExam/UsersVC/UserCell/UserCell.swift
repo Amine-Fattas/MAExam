@@ -24,6 +24,8 @@ class UserCell: UITableViewCell {
         uv_container.layer.borderWidth = 1
         uv_container.layer.borderColor = UIColor.orange.cgColor
         uv_container.layer.cornerRadius = 5
+        ul_name.layer.cornerRadius = 5
+        ul_name.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
