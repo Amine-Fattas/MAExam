@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE0AF58028344E870081871B /* LocalUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF57F28344E870081871B /* LocalUsersInteractor.swift */; };
 		AE0AF5832834597A0081871B /* NSCacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5822834597A0081871B /* NSCacheStore.swift */; };
+		AE0AF585283465C80081871B /* LocalUsersInteractor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF584283465C80081871B /* LocalUsersInteractor+Helpers.swift */; };
 		AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */; };
 		AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5822833D1B600F9367A /* UsersPresenter.swift */; };
 		AE54E5852833D23700F9367A /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5842833D23700F9367A /* UserItem.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		AE0AF57F28344E870081871B /* LocalUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsersInteractor.swift; sourceTree = "<group>"; };
 		AE0AF5822834597A0081871B /* NSCacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheStore.swift; sourceTree = "<group>"; };
+		AE0AF584283465C80081871B /* LocalUsersInteractor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalUsersInteractor+Helpers.swift"; sourceTree = "<group>"; };
 		AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIComposer.swift; sourceTree = "<group>"; };
 		AE54E5822833D1B600F9367A /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		AE54E5842833D23700F9367A /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0AF57F28344E870081871B /* LocalUsersInteractor.swift */,
+				AE0AF584283465C80081871B /* LocalUsersInteractor+Helpers.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
 				AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */,
 				AE54E5972833EA8700F9367A /* HTTPClient.swift in Sources */,
+				AE0AF585283465C80081871B /* LocalUsersInteractor+Helpers.swift in Sources */,
 				AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */,
 				AE54E5852833D23700F9367A /* UserItem.swift in Sources */,
 				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
