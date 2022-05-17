@@ -9,10 +9,11 @@ import Foundation
 
 class LocalTasksInteractor : TasksInteractor {
     
-    private let KEY = "tasks"
+    private let KEY: String
     private let cacheStore: CacheStore
     
-    init(cacheStore: CacheStore){
+    init(cacheStore: CacheStore, KEY: String){
+        self.KEY = KEY
         self.cacheStore = cacheStore
     }
     
