@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIComposer.swift; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				AEC75C4D2833BD2300F0A7CF /* UserCell */,
 				AEC75C492833AE4400F0A7CF /* UsersVC.swift */,
 				AEC75C4A2833AE4400F0A7CF /* UsersVC.xib */,
+				AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */,
 			);
 			path = UsersVC;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */,
 				AEC75C502833BD6B00F0A7CF /* UserCell.swift in Sources */,
 				AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,

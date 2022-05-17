@@ -12,7 +12,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     private lazy var navigationController = UINavigationController(
-        rootViewController: UsersVC(nibName: "UsersVC", bundle: nil))
+        rootViewController: UsersUIComposer.compose(
+            onUserSelection: { [weak self] userId in
+                self?.showTask(of: userId)
+        }))
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -23,6 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func configureWindow(){
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    private func showTask(of userId: Int){
+        //TODO: nagivate to TaskVC
+        print("Selected ID: ", userId)
     }
 
 

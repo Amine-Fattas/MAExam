@@ -42,9 +42,18 @@ class UsersVC: UIViewController {
     //MARK: - Properties -
     private let CELL_ID = "UserCell"
     
-    var presenter = UsersPresenter(onUserSelection: { print("Selected: ", $0)})
+    var presenter: UsersPresenter!
     
     //MARK: - init methods -
+    init(presenter: UsersPresenter, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.presenter = presenter
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
