@@ -11,6 +11,7 @@
 		AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5822833D1B600F9367A /* UsersPresenter.swift */; };
 		AE54E5852833D23700F9367A /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5842833D23700F9367A /* UserItem.swift */; };
 		AE54E58B2833D4F200F9367A /* RemoteUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E58A2833D4F200F9367A /* RemoteUsersInteractor.swift */; };
+		AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		AE54E5822833D1B600F9367A /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		AE54E5842833D23700F9367A /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		AE54E58A2833D4F200F9367A /* RemoteUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUsersInteractor.swift; sourceTree = "<group>"; };
+		AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		AE54E5872833D2A100F9367A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AE54E58D2833DDC000F9367A /* Shared */,
 				AE54E5862833D27B00F9367A /* UsersVC */,
 				AEC75C4D2833BD2300F0A7CF /* UserCell */,
 			);
@@ -89,6 +92,14 @@
 				AE54E5842833D23700F9367A /* UserItem.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE54E58D2833DDC000F9367A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		AEC75C272833AD5700F0A7CF = {
@@ -217,6 +228,7 @@
 				AEC75C502833BD6B00F0A7CF /* UserCell.swift in Sources */,
 				AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
+				AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */,
 				AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */,
 				AE54E5852833D23700F9367A /* UserItem.swift in Sources */,
 				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
