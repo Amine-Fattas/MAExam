@@ -15,12 +15,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         URLSessionHTTPClient()
     }()
     
+    private lazy var cacheStore: CacheStore = {
+        NSCacheStore(cache: NSCache<NSString, NSData>())
+    }()
+    
     private let USERS_URL = "https://jsonplaceholder.typicode.com/users/"
     private let TASKS_URL = "https://jsonplaceholder.typicode.com/todos?userId="
 
     private lazy var navigationController = UINavigationController(
         rootViewController: UsersUIComposer.compose(
             httpClient: httpClient,
+            cacheStore: cacheStore,
             urlString: USERS_URL,
             onUserSelection: { [weak self] userId in
                 self?.showTask(of: userId)
