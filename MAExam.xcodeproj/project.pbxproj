@@ -71,7 +71,6 @@
 		AE54E5872833D2A100F9367A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AE54E58D2833DDC000F9367A /* Shared */,
 				AE54E5862833D27B00F9367A /* UsersVC */,
 				AEC75C4D2833BD2300F0A7CF /* UserCell */,
 			);
@@ -103,14 +102,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		AE54E58D2833DDC000F9367A /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		AE54E5902833DF6C00F9367A /* API Infra */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +113,7 @@
 		AE54E5932833EA4000F9367A /* Shared Module */ = {
 			isa = PBXGroup;
 			children = (
+				AEA0DEAB28340C7000BF6016 /* UI */,
 				AEA0DEA828340BA000BF6016 /* Presentation */,
 				AE54E5952833EA7800F9367A /* API */,
 				AE54E5902833DF6C00F9367A /* API Infra */,
@@ -143,6 +135,14 @@
 				AEA0DEA928340BCE00BF6016 /* ResponseHanlders.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AEA0DEAB28340C7000BF6016 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		AEC75C272833AD5700F0A7CF = {
