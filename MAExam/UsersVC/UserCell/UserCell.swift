@@ -9,12 +9,14 @@ import UIKit
 
 class UserCell: UITableViewCell {
     
+    //MARK: - Outlets -
     @IBOutlet weak var ul_name: UILabel!
     @IBOutlet weak var ul_username: UILabel!
     @IBOutlet weak var ul_email: UILabel!
     
     @IBOutlet weak var uv_container: UIView!
     
+    //MARK: - init methods -
     override func awakeFromNib() {
         super.awakeFromNib()
         initUI()

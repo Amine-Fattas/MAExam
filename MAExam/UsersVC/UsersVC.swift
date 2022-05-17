@@ -8,11 +8,13 @@
 import UIKit
 
 class UsersVC: UIViewController {
-    
-    private let CELL_ID = "UserCell"
-    
+    //MARK: - Outlets -
     @IBOutlet weak var tableView: UITableView!
 
+    //MARK: - Prpperties -
+    private let CELL_ID = "UserCell"
+    
+    //MARK: - init methods -
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -32,6 +34,7 @@ class UsersVC: UIViewController {
 
 }
 
+//MARK: - UITableView Delegate and DataSource -
 extension UsersVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
