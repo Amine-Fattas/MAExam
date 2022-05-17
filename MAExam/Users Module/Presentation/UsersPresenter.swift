@@ -18,11 +18,11 @@ protocol ErrorView : NSObject{
 class UsersPresenter {
     var users : [UserItem] = []
     var onUserSelection: (Int) -> Void
-    var interactor: RemoteUsersInteractor
+    var interactor: UsersInteractor
     weak var usersView: UsersView?
     weak var errorView: ErrorView?
     
-    init(interactor: RemoteUsersInteractor,
+    init(interactor: UsersInteractor,
          onUserSelection: @escaping (Int) -> Void) {
         self.onUserSelection = onUserSelection
         self.interactor = interactor

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UserItem: Decodable{
-    let id: Int
-    let name: String
-    let username: String
-    let email: String
+public struct UserItem: Decodable{
+    public let id: Int
+    public let name: String
+    public let username: String
+    public let email: String
 }

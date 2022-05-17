@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteUsersInteractor {
+class RemoteUsersInteractor : UsersInteractor{
     
     private let httpClient: HTTPClient
     
