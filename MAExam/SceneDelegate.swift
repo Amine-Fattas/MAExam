@@ -14,10 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient()
     }()
+    
+    private let USERS_URL = "https://jsonplaceholder.typicode.com/users/"
+    private let TASKS_URL = "https://jsonplaceholder.typicode.com/todos?userId="
 
     private lazy var navigationController = UINavigationController(
         rootViewController: UsersUIComposer.compose(
             httpClient: httpClient,
+            urlString: USERS_URL,
             onUserSelection: { [weak self] userId in
                 self?.showTask(of: userId)
         }))
@@ -35,6 +39,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func showTask(of userId: Int){
         //TODO: nagivate to TaskVC
+        let urlString = "\(TASKS_URL)\(userId)"
+        let vc = TasksUIComposer.compose(httpClient: httpClient, urlString: urlString)
+        navigationController.pushViewController(vc, animated: true)
         print("Selected ID: ", userId)
     }
 

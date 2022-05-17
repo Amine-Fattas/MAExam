@@ -20,6 +20,11 @@
 		AEA0DEB2283417D900BF6016 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */; };
 		AEA0DEB52834181C00BF6016 /* RemoteTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */; };
 		AEA0DEB82834191100BF6016 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB72834191100BF6016 /* TasksPresenter.swift */; };
+		AEA0DEBD283419AF00BF6016 /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEBB283419AF00BF6016 /* TasksVC.swift */; };
+		AEA0DEBE283419AF00BF6016 /* TasksVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA0DEBC283419AF00BF6016 /* TasksVC.xib */; };
+		AEA0DEC228341B6200BF6016 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEC028341B6200BF6016 /* TaskCell.swift */; };
+		AEA0DEC328341B6200BF6016 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA0DEC128341B6200BF6016 /* TaskCell.xib */; };
+		AEA0DEC528341FEF00BF6016 /* TasksUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEC428341FEF00BF6016 /* TasksUIComposer.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -44,6 +49,11 @@
 		AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
 		AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTasksInteractor.swift; sourceTree = "<group>"; };
 		AEA0DEB72834191100BF6016 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
+		AEA0DEBB283419AF00BF6016 /* TasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
+		AEA0DEBC283419AF00BF6016 /* TasksVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksVC.xib; sourceTree = "<group>"; };
+		AEA0DEC028341B6200BF6016 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		AEA0DEC128341B6200BF6016 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		AEA0DEC428341FEF00BF6016 /* TasksUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksUIComposer.swift; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +169,8 @@
 				AEA0DEAE2834175800BF6016 /* Domain */,
 				AEA0DEB32834180C00BF6016 /* API */,
 				AEA0DEB6283418F300BF6016 /* Presentation */,
+				AEA0DEB92834195B00BF6016 /* UI */,
+				AEA0DEC428341FEF00BF6016 /* TasksUIComposer.swift */,
 			);
 			path = "Tasks Module";
 			sourceTree = "<group>";
@@ -186,6 +198,33 @@
 				AEA0DEB72834191100BF6016 /* TasksPresenter.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AEA0DEB92834195B00BF6016 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEBA2834196200BF6016 /* TasksVC */,
+				AEA0DEBF28341B4500BF6016 /* TaskCell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AEA0DEBA2834196200BF6016 /* TasksVC */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEBB283419AF00BF6016 /* TasksVC.swift */,
+				AEA0DEBC283419AF00BF6016 /* TasksVC.xib */,
+			);
+			path = TasksVC;
+			sourceTree = "<group>";
+		};
+		AEA0DEBF28341B4500BF6016 /* TaskCell */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEC028341B6200BF6016 /* TaskCell.swift */,
+				AEA0DEC128341B6200BF6016 /* TaskCell.xib */,
+			);
+			path = TaskCell;
 			sourceTree = "<group>";
 		};
 		AEC75C272833AD5700F0A7CF = {
@@ -300,7 +339,9 @@
 			files = (
 				AEC75C512833BD6B00F0A7CF /* UserCell.xib in Resources */,
 				AEC75C402833AD5900F0A7CF /* LaunchScreen.storyboard in Resources */,
+				AEA0DEBE283419AF00BF6016 /* TasksVC.xib in Resources */,
 				AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */,
+				AEA0DEC328341B6200BF6016 /* TaskCell.xib in Resources */,
 				AEC75C4C2833AE4400F0A7CF /* UsersVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,8 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA0DEC528341FEF00BF6016 /* TasksUIComposer.swift in Sources */,
 				AEA0DEAA28340BCE00BF6016 /* ResponseHanlders.swift in Sources */,
 				AEA0DEB82834191100BF6016 /* TasksPresenter.swift in Sources */,
+				AEA0DEC228341B6200BF6016 /* TaskCell.swift in Sources */,
 				AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */,
 				AEA0DEA728340A1B00BF6016 /* UsersInteractor.swift in Sources */,
 				AEA0DEB52834181C00BF6016 /* RemoteTasksInteractor.swift in Sources */,
@@ -329,6 +372,7 @@
 				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
 				AE54E58B2833D4F200F9367A /* RemoteUsersInteractor.swift in Sources */,
 				AEA0DEB02834177600BF6016 /* TaskItem.swift in Sources */,
+				AEA0DEBD283419AF00BF6016 /* TasksVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

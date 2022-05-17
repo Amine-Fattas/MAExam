@@ -11,7 +11,7 @@ class UsersPresenter {
     var users : [UserItem] = []
     var onUserSelection: (Int) -> Void
     var interactor: UsersInteractor
-    weak var usersView: ListView?
+    weak var listView: ListView?
     weak var errorView: ErrorView?
     
     init(interactor: UsersInteractor,
@@ -25,7 +25,7 @@ class UsersPresenter {
             switch result {
             case let .success(users):
                 self?.users = users
-                self?.usersView!.updateView()
+                self?.listView!.updateView()
             case let .failure(error):
                 self?.errorView!.showError(error: error)
             }

@@ -10,15 +10,16 @@ import Foundation
 class RemoteUsersInteractor : UsersInteractor{
     
     private let httpClient: HTTPClient
+    private let urlString : String
     
-    init(httpClient: HTTPClient){
+    init(httpClient: HTTPClient, urlString : String){
         self.httpClient = httpClient
+        self.urlString  = urlString
     }
     
     
     public func load(completion: @escaping (Result<[UserItem], Error>) -> Void){
         
-        let urlString = "https://jsonplaceholder.typicode.com/users/"
         guard let url = URL(string: urlString) else { return }
         httpClient.get(from: url, completion: { result in
             switch result {

@@ -9,8 +9,12 @@ import UIKit
 
 class UsersUIComposer {
     static func compose(httpClient: HTTPClient,
+                        urlString : String,
                         onUserSelection: @escaping (Int) -> Void) -> UIViewController{
-        let interactor = RemoteUsersInteractor(httpClient: httpClient)
+        let interactor = RemoteUsersInteractor(
+            httpClient: httpClient,
+            urlString: urlString
+        )
         let onUserSelection = { userId in
             onUserSelection(userId)
         }
