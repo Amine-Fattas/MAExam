@@ -8,16 +8,19 @@
 import Foundation
 
 class UsersPresenter {
+    let title: String
+    let onUserSelection: (Int) -> Void
+    let interactor: UsersInteractor
     var users : [UserItem] = []
-    var onUserSelection: (Int) -> Void
-    var interactor: UsersInteractor
     weak var listView: ListView?
     weak var errorView: ErrorView?
     
-    init(interactor: UsersInteractor,
+    init(title: String,
+        interactor: UsersInteractor,
          onUserSelection: @escaping (Int) -> Void) {
-        self.onUserSelection = onUserSelection
+        self.title = title
         self.interactor = interactor
+        self.onUserSelection = onUserSelection
     }
     
     func loadUsers(){

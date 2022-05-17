@@ -19,6 +19,7 @@ class UsersUIComposer {
             onUserSelection(userId)
         }
         let presenter = UsersPresenter(
+            title: "Users",
             interactor: interactor,
             onUserSelection: onUserSelection)
         let vc = UsersVC(presenter: presenter, nibName: "UsersVC", bundle: nil)

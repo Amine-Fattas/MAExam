@@ -13,7 +13,6 @@ class UsersVC: UIViewController {
 
     //MARK: - Properties -
     private let CELL_ID = "UserCell"
-    
     var presenter: UsersPresenter!
     let refreshControl = UIRefreshControl()
     
@@ -52,7 +51,7 @@ class UsersVC: UIViewController {
     }
     
     private func initUI(){
-        title = "Users"
+        title = presenter.title
         refreshControl.tintColor = .orange
         if tableView.contentOffset.y == 0{
             tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)

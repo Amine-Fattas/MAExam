@@ -9,11 +9,13 @@ import Foundation
 
 class TasksPresenter {
     var tasks : [TaskItem] = []
-    var interactor: TasksInteractor
+    let title: String
+    let interactor: TasksInteractor
     weak var listView: ListView?
     weak var errorView: ErrorView?
     
-    init(interactor: TasksInteractor) {
+    init(title: String, interactor: TasksInteractor) {
+        self.title = title
         self.interactor = interactor
     }
     

@@ -166,11 +166,11 @@
 		AEA0DEAD2834172600BF6016 /* Tasks Module */ = {
 			isa = PBXGroup;
 			children = (
+				AEA0DEC428341FEF00BF6016 /* TasksUIComposer.swift */,
 				AEA0DEAE2834175800BF6016 /* Domain */,
 				AEA0DEB32834180C00BF6016 /* API */,
 				AEA0DEB6283418F300BF6016 /* Presentation */,
 				AEA0DEB92834195B00BF6016 /* UI */,
-				AEA0DEC428341FEF00BF6016 /* TasksUIComposer.swift */,
 			);
 			path = "Tasks Module";
 			sourceTree = "<group>";

@@ -52,7 +52,7 @@ class TasksVC: UIViewController {
     }
     
     private func initUI(){
-        title = "Tasks"
+        title = presenter.title
         refreshControl.tintColor = .orange
         if tableView.contentOffset.y == 0{
             tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
@@ -70,8 +70,7 @@ extension TasksVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID) as! TaskCell
         let task = presenter.tasks[indexPath.row]
-        cell.setup(title: presenter.tasks[indexPath.row].title,
-                   completed: presenter.tasks[indexPath.row].completed)
+        cell.setup(title: task.title, completed: task.completed)
         return cell
     }
 }

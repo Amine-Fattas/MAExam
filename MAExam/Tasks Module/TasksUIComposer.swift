@@ -14,7 +14,7 @@ class TasksUIComposer {
             urlString: urlString
         )
 
-        let presenter = TasksPresenter(interactor: interactor)
+        let presenter = TasksPresenter(title: "Tasks", interactor: interactor)
         let vc = TasksVC(presenter: presenter, nibName: "TasksVC", bundle: nil)
         return vc
     }
