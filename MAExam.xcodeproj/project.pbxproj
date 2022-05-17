@@ -19,6 +19,7 @@
 		AEA0DEB02834177600BF6016 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEAF2834177600BF6016 /* TaskItem.swift */; };
 		AEA0DEB2283417D900BF6016 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */; };
 		AEA0DEB52834181C00BF6016 /* RemoteTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */; };
+		AEA0DEB82834191100BF6016 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB72834191100BF6016 /* TasksPresenter.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		AEA0DEAF2834177600BF6016 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
 		AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTasksInteractor.swift; sourceTree = "<group>"; };
+		AEA0DEB72834191100BF6016 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				AEA0DEAE2834175800BF6016 /* Domain */,
 				AEA0DEB32834180C00BF6016 /* API */,
+				AEA0DEB6283418F300BF6016 /* Presentation */,
 			);
 			path = "Tasks Module";
 			sourceTree = "<group>";
@@ -175,6 +178,14 @@
 				AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		AEA0DEB6283418F300BF6016 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEB72834191100BF6016 /* TasksPresenter.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		AEC75C272833AD5700F0A7CF = {
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA0DEAA28340BCE00BF6016 /* ResponseHanlders.swift in Sources */,
+				AEA0DEB82834191100BF6016 /* TasksPresenter.swift in Sources */,
 				AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */,
 				AEA0DEA728340A1B00BF6016 /* UsersInteractor.swift in Sources */,
 				AEA0DEB52834181C00BF6016 /* RemoteTasksInteractor.swift in Sources */,
