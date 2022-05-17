@@ -16,7 +16,7 @@ class UsersUIComposer {
             httpClient: httpClient,
             urlString: urlString
         )
-        let localInteractor = LocalUsersInteractor(usersCache: cacheStore)
+        let localInteractor = LocalUsersInteractor(cacheStore: cacheStore)
         let onUserSelection = { userId in
             onUserSelection(userId)
         }

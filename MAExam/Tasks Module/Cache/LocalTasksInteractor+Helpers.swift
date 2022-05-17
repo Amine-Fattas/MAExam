@@ -1,5 +1,5 @@
 //
-//  LocalUsersInteractor+Helpers.swift
+//  LocalTasksInteractor+Helpers.swift
 //  MAExam
 //
 //  Created by Amine Fattas on 18/05/2022.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol UsersSaver {
-    func save(users: [UserItem])
+protocol TasksSaver {
+    func save(tasks: [TaskItem])
 }
 
-struct UsersInteractorWithFallback: UsersInteractor {
-    let primary : UsersInteractor
-    let fallback: UsersInteractor & UsersSaver
-    func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
+struct TasksInteractorWithFallback: TasksInteractor {
+    let primary : TasksInteractor
+    let fallback: TasksInteractor & TasksSaver
+    func load(completion: @escaping (Result<[TaskItem], Error>) -> Void) {
         primary.load{ result in
             switch result {
             case .success:

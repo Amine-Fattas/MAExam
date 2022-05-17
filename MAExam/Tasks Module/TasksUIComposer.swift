@@ -8,13 +8,17 @@
 import UIKit
 
 class TasksUIComposer {
-    static func compose(httpClient: HTTPClient, urlString : String) -> UIViewController{
-        let interactor = RemoteTasksInteractor(
+    static func compose(httpClient: HTTPClient, cacheStore: CacheStore, urlString : String) -> UIViewController{
+        let remoteInteractor = RemoteTasksInteractor(
             httpClient: httpClient,
             urlString: urlString
         )
+        let localInteractor = LocalTasksInteractor(cacheStore: cacheStore)
 
-        let presenter = TasksPresenter(title: "Tasks", interactor: interactor)
+        let presenter = TasksPresenter(title: "Tasks",
+                                       interactor: TasksInteractorWithFallback(
+                                        primary: remoteInteractor,
+                                        fallback: localInteractor))
         let vc = TasksVC(presenter: presenter, nibName: "TasksVC", bundle: nil)
         return vc
     }

@@ -10,6 +10,9 @@
 		AE0AF58028344E870081871B /* LocalUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF57F28344E870081871B /* LocalUsersInteractor.swift */; };
 		AE0AF5832834597A0081871B /* NSCacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5822834597A0081871B /* NSCacheStore.swift */; };
 		AE0AF585283465C80081871B /* LocalUsersInteractor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF584283465C80081871B /* LocalUsersInteractor+Helpers.swift */; };
+		AE0AF588283466D90081871B /* LocalTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF587283466D90081871B /* LocalTasksInteractor.swift */; };
+		AE0AF58A283467190081871B /* LocalTasksInteractor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF589283467190081871B /* LocalTasksInteractor+Helpers.swift */; };
+		AE0AF58D2834674A0081871B /* CacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF58C2834674A0081871B /* CacheStore.swift */; };
 		AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */; };
 		AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5822833D1B600F9367A /* UsersPresenter.swift */; };
 		AE54E5852833D23700F9367A /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5842833D23700F9367A /* UserItem.swift */; };
@@ -42,6 +45,9 @@
 		AE0AF57F28344E870081871B /* LocalUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsersInteractor.swift; sourceTree = "<group>"; };
 		AE0AF5822834597A0081871B /* NSCacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheStore.swift; sourceTree = "<group>"; };
 		AE0AF584283465C80081871B /* LocalUsersInteractor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalUsersInteractor+Helpers.swift"; sourceTree = "<group>"; };
+		AE0AF587283466D90081871B /* LocalTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTasksInteractor.swift; sourceTree = "<group>"; };
+		AE0AF589283467190081871B /* LocalTasksInteractor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalTasksInteractor+Helpers.swift"; sourceTree = "<group>"; };
+		AE0AF58C2834674A0081871B /* CacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStore.swift; sourceTree = "<group>"; };
 		AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIComposer.swift; sourceTree = "<group>"; };
 		AE54E5822833D1B600F9367A /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		AE54E5842833D23700F9367A /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
@@ -100,6 +106,23 @@
 			path = "Cache Infra";
 			sourceTree = "<group>";
 		};
+		AE0AF586283466CA0081871B /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AE0AF587283466D90081871B /* LocalTasksInteractor.swift */,
+				AE0AF589283467190081871B /* LocalTasksInteractor+Helpers.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		AE0AF58B2834673D0081871B /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AE0AF58C2834674A0081871B /* CacheStore.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		AE54E5862833D27B00F9367A /* UsersVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +177,7 @@
 		AE54E5932833EA4000F9367A /* Shared Module */ = {
 			isa = PBXGroup;
 			children = (
+				AE0AF58B2834673D0081871B /* Cache */,
 				AEA0DEAB28340C7000BF6016 /* UI */,
 				AEA0DEA828340BA000BF6016 /* Presentation */,
 				AE54E5952833EA7800F9367A /* API */,
@@ -191,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA0DEC428341FEF00BF6016 /* TasksUIComposer.swift */,
+				AE0AF586283466CA0081871B /* Cache */,
 				AEA0DEAE2834175800BF6016 /* Domain */,
 				AEA0DEB32834180C00BF6016 /* API */,
 				AEA0DEB6283418F300BF6016 /* Presentation */,
@@ -392,6 +417,7 @@
 				AEA0DEB2283417D900BF6016 /* TasksInteractor.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
 				AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */,
+				AE0AF58D2834674A0081871B /* CacheStore.swift in Sources */,
 				AE54E5972833EA8700F9367A /* HTTPClient.swift in Sources */,
 				AE0AF585283465C80081871B /* LocalUsersInteractor+Helpers.swift in Sources */,
 				AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */,
@@ -399,6 +425,8 @@
 				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
 				AE54E58B2833D4F200F9367A /* RemoteUsersInteractor.swift in Sources */,
 				AEA0DEB02834177600BF6016 /* TaskItem.swift in Sources */,
+				AE0AF58A283467190081871B /* LocalTasksInteractor+Helpers.swift in Sources */,
+				AE0AF588283466D90081871B /* LocalTasksInteractor.swift in Sources */,
 				AE0AF58028344E870081871B /* LocalUsersInteractor.swift in Sources */,
 				AEA0DEBD283419AF00BF6016 /* TasksVC.swift in Sources */,
 			);

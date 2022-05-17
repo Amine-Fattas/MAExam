@@ -1,28 +1,28 @@
 //
-//  LocalUsersInteractor.swift
+//  LocalTasksCache.swift
 //  MAExam
 //
-//  Created by Amine Fattas on 17/05/2022.
+//  Created by Amine Fattas on 18/05/2022.
 //
 
 import Foundation
 
-class LocalUsersInteractor : UsersInteractor {
+class LocalTasksInteractor : TasksInteractor {
     
-    private let KEY = "users"
+    private let KEY = "tasks"
     private let cacheStore: CacheStore
     
     init(cacheStore: CacheStore){
         self.cacheStore = cacheStore
     }
     
-    func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
+    func load(completion: @escaping (Result<[TaskItem], Error>) -> Void) {
         cacheStore.load(KEY: KEY,completion: { result in
             switch result {
             case let .success(data):
                 do {
-                    let users = try JSONDecoder().decode([UserItem].self, from: data)
-                    completion(.success(users))
+                    let tasks = try JSONDecoder().decode([TaskItem].self, from: data)
+                    completion(.success(tasks))
                 }
                 catch {
                     completion(.failure(NSError(domain: "Invalid Data", code: 0)))
@@ -34,10 +34,10 @@ class LocalUsersInteractor : UsersInteractor {
     }
 }
 
-extension LocalUsersInteractor : UsersSaver{
-    func save(users: [UserItem]){
+extension LocalTasksInteractor : TasksSaver{
+    func save(tasks: [TaskItem]){
         do {
-            let data = try JSONEncoder().encode(users)
+            let data = try JSONEncoder().encode(tasks)
             cacheStore.save(data: data, KEY: KEY)
         }
         catch {
@@ -45,4 +45,3 @@ extension LocalUsersInteractor : UsersSaver{
         }
     }
 }
-

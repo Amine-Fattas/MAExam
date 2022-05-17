@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TaskItem : Decodable {
+public struct TaskItem : Codable {
     let userId: Int
     let id: Int
     let title: String

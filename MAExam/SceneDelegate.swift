@@ -43,9 +43,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func showTask(of userId: Int){
-        //TODO: nagivate to TaskVC
         let urlString = "\(TASKS_URL)\(userId)"
-        let vc = TasksUIComposer.compose(httpClient: httpClient, urlString: urlString)
+        let vc = TasksUIComposer.compose(httpClient: httpClient,
+                                         cacheStore: cacheStore,
+                                         urlString: urlString)
         navigationController.pushViewController(vc, animated: true)
         print("Selected ID: ", userId)
     }

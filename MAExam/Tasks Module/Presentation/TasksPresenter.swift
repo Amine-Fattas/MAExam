@@ -10,11 +10,11 @@ import Foundation
 class TasksPresenter {
     var tasks : [TaskItem] = []
     let title: String
-    let interactor: TasksInteractor
+    let interactor: TasksInteractorWithFallback
     weak var listView: ListView?
     weak var errorView: ErrorView?
     
-    init(title: String, interactor: TasksInteractor) {
+    init(title: String, interactor: TasksInteractorWithFallback) {
         self.title = title
         self.interactor = interactor
     }
@@ -25,6 +25,7 @@ class TasksPresenter {
             case let .success(tasks):
                 self?.tasks = tasks
                 self?.listView!.updateView()
+                self?.interactor.fallback.save(tasks: tasks)
             case let .failure(error):
                 self?.errorView!.showError(error: error)
             }
