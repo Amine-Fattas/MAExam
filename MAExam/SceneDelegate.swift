@@ -10,9 +10,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    private lazy var httpClient: HTTPClient = {
+        URLSessionHTTPClient()
+    }()
 
     private lazy var navigationController = UINavigationController(
         rootViewController: UsersUIComposer.compose(
+            httpClient: httpClient,
             onUserSelection: { [weak self] userId in
                 self?.showTask(of: userId)
         }))

@@ -70,12 +70,16 @@ extension UsersVC : UITableViewDataSource, UITableViewDelegate {
 
 extension UsersVC: UsersView {
     func updateView() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
 extension UsersVC: ErrorView {
     func showError(error: Error) {
-        showAlert(error: error)
+        DispatchQueue.main.async { [weak self] in
+            self?.showAlert(error: error)
+        }
     }
 }

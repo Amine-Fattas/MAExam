@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserItem{
+struct UserItem: Decodable{
     let id: Int
     let name: String
     let username: String
