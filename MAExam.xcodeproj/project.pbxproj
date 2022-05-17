@@ -13,6 +13,8 @@
 		AEC75C402833AD5900F0A7CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3E2833AD5900F0A7CF /* LaunchScreen.storyboard */; };
 		AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C492833AE4400F0A7CF /* UsersVC.swift */; };
 		AEC75C4C2833AE4400F0A7CF /* UsersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C4A2833AE4400F0A7CF /* UsersVC.xib */; };
+		AEC75C502833BD6B00F0A7CF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C4E2833BD6B00F0A7CF /* UserCell.swift */; };
+		AEC75C512833BD6B00F0A7CF /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C4F2833BD6B00F0A7CF /* UserCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		AEC75C412833AD5900F0A7CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEC75C492833AE4400F0A7CF /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		AEC75C4A2833AE4400F0A7CF /* UsersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersVC.xib; sourceTree = "<group>"; };
+		AEC75C4E2833BD6B00F0A7CF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		AEC75C4F2833BD6B00F0A7CF /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +73,20 @@
 		AEC75C482833AE3200F0A7CF /* UsersVC */ = {
 			isa = PBXGroup;
 			children = (
+				AEC75C4D2833BD2300F0A7CF /* UserCell */,
 				AEC75C492833AE4400F0A7CF /* UsersVC.swift */,
 				AEC75C4A2833AE4400F0A7CF /* UsersVC.xib */,
 			);
 			path = UsersVC;
+			sourceTree = "<group>";
+		};
+		AEC75C4D2833BD2300F0A7CF /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				AEC75C4E2833BD6B00F0A7CF /* UserCell.swift */,
+				AEC75C4F2833BD6B00F0A7CF /* UserCell.xib */,
+			);
+			path = UserCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC75C512833BD6B00F0A7CF /* UserCell.xib in Resources */,
 				AEC75C402833AD5900F0A7CF /* LaunchScreen.storyboard in Resources */,
 				AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */,
 				AEC75C4C2833AE4400F0A7CF /* UsersVC.xib in Resources */,
@@ -146,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC75C502833BD6B00F0A7CF /* UserCell.swift in Sources */,
 				AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
 				AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */,
