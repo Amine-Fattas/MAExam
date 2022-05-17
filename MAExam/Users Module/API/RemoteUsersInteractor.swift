@@ -7,21 +7,16 @@
 
 import Foundation
 
-public protocol HTTPClient {
-    typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
-    
-    func get(from url: URL, completion: @escaping (Result) -> Void)
-}
-
 class RemoteUsersInteractor {
+    
+    private let httpClient: HTTPClient
     
     init(httpClient: HTTPClient){
         self.httpClient = httpClient
     }
     
-    let httpClient: HTTPClient
     
-    func load(completion: @escaping (Result<[UserItem], Error>) -> Void){
+    public func load(completion: @escaping (Result<[UserItem], Error>) -> Void){
         
         let urlString = "https://jsonplaceholder.typicode.com/users/"
         guard let url = URL(string: urlString) else { return }

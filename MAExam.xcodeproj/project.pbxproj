@@ -13,6 +13,7 @@
 		AE54E58B2833D4F200F9367A /* RemoteUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E58A2833D4F200F9367A /* RemoteUsersInteractor.swift */; };
 		AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */; };
 		AE54E5922833DF8D00F9367A /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5912833DF8D00F9367A /* URLSessionHTTPClient.swift */; };
+		AE54E5972833EA8700F9367A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5962833EA8700F9367A /* HTTPClient.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		AE54E58A2833D4F200F9367A /* RemoteUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUsersInteractor.swift; sourceTree = "<group>"; };
 		AE54E58E2833DDDC00F9367A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		AE54E5912833DF8D00F9367A /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		AE54E5962833EA8700F9367A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,23 @@
 			path = "API Infra";
 			sourceTree = "<group>";
 		};
+		AE54E5932833EA4000F9367A /* Shared Module */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E5952833EA7800F9367A /* API */,
+				AE54E5902833DF6C00F9367A /* API Infra */,
+			);
+			path = "Shared Module";
+			sourceTree = "<group>";
+		};
+		AE54E5952833EA7800F9367A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E5962833EA8700F9367A /* HTTPClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		AEC75C272833AD5700F0A7CF = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +152,7 @@
 			children = (
 				AEC75C332833AD5700F0A7CF /* AppDelegate.swift */,
 				AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */,
+				AE54E5932833EA4000F9367A /* Shared Module */,
 				AEC75C482833AE3200F0A7CF /* Users Module */,
 				AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */,
 				AEC75C3E2833AD5900F0A7CF /* LaunchScreen.storyboard */,
@@ -145,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */,
-				AE54E5902833DF6C00F9367A /* API Infra */,
 				AE54E58C2833D57500F9367A /* Domain */,
 				AE54E5892833D47800F9367A /* API */,
 				AE54E5882833D2A900F9367A /* Presentation */,
@@ -241,6 +260,7 @@
 				AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
 				AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */,
+				AE54E5972833EA8700F9367A /* HTTPClient.swift in Sources */,
 				AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */,
 				AE54E5852833D23700F9367A /* UserItem.swift in Sources */,
 				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
