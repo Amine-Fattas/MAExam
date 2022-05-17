@@ -16,6 +16,9 @@
 		AE54E5972833EA8700F9367A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5962833EA8700F9367A /* HTTPClient.swift */; };
 		AEA0DEA728340A1B00BF6016 /* UsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEA628340A1B00BF6016 /* UsersInteractor.swift */; };
 		AEA0DEAA28340BCE00BF6016 /* ResponseHanlders.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEA928340BCE00BF6016 /* ResponseHanlders.swift */; };
+		AEA0DEB02834177600BF6016 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEAF2834177600BF6016 /* TaskItem.swift */; };
+		AEA0DEB2283417D900BF6016 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */; };
+		AEA0DEB52834181C00BF6016 /* RemoteTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 		AE54E5962833EA8700F9367A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		AEA0DEA628340A1B00BF6016 /* UsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInteractor.swift; sourceTree = "<group>"; };
 		AEA0DEA928340BCE00BF6016 /* ResponseHanlders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHanlders.swift; sourceTree = "<group>"; };
+		AEA0DEAF2834177600BF6016 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
+		AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTasksInteractor.swift; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +151,32 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		AEA0DEAD2834172600BF6016 /* Tasks Module */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEAE2834175800BF6016 /* Domain */,
+				AEA0DEB32834180C00BF6016 /* API */,
+			);
+			path = "Tasks Module";
+			sourceTree = "<group>";
+		};
+		AEA0DEAE2834175800BF6016 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEAF2834177600BF6016 /* TaskItem.swift */,
+				AEA0DEB1283417D900BF6016 /* TasksInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AEA0DEB32834180C00BF6016 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0DEB42834181C00BF6016 /* RemoteTasksInteractor.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		AEC75C272833AD5700F0A7CF = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +200,7 @@
 				AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */,
 				AE54E5932833EA4000F9367A /* Shared Module */,
 				AEC75C482833AE3200F0A7CF /* Users Module */,
+				AEA0DEAD2834172600BF6016 /* Tasks Module */,
 				AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */,
 				AEC75C3E2833AD5900F0A7CF /* LaunchScreen.storyboard */,
 				AEC75C412833AD5900F0A7CF /* Info.plist */,
@@ -271,9 +304,11 @@
 				AEA0DEAA28340BCE00BF6016 /* ResponseHanlders.swift in Sources */,
 				AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */,
 				AEA0DEA728340A1B00BF6016 /* UsersInteractor.swift in Sources */,
+				AEA0DEB52834181C00BF6016 /* RemoteTasksInteractor.swift in Sources */,
 				AE54E5922833DF8D00F9367A /* URLSessionHTTPClient.swift in Sources */,
 				AEC75C502833BD6B00F0A7CF /* UserCell.swift in Sources */,
 				AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */,
+				AEA0DEB2283417D900BF6016 /* TasksInteractor.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
 				AE54E58F2833DDDC00F9367A /* UIViewController+Helpers.swift in Sources */,
 				AE54E5972833EA8700F9367A /* HTTPClient.swift in Sources */,
@@ -281,6 +316,7 @@
 				AE54E5852833D23700F9367A /* UserItem.swift in Sources */,
 				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
 				AE54E58B2833D4F200F9367A /* RemoteUsersInteractor.swift in Sources */,
+				AEA0DEB02834177600BF6016 /* TaskItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
