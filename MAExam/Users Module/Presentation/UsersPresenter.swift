@@ -7,19 +7,11 @@
 
 import Foundation
 
-protocol UsersView : NSObject{
-    func updateView()
-}
-
-protocol ErrorView : NSObject{
-    func showError(error: Error)
-}
-
 class UsersPresenter {
     var users : [UserItem] = []
     var onUserSelection: (Int) -> Void
     var interactor: UsersInteractor
-    weak var usersView: UsersView?
+    weak var usersView: ListView?
     weak var errorView: ErrorView?
     
     init(interactor: UsersInteractor,

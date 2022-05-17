@@ -80,7 +80,7 @@ extension UsersVC : UITableViewDataSource, UITableViewDelegate {
     }
 }
 //MARK: - UsersView Delegate -
-extension UsersVC: UsersView {
+extension UsersVC: ListView {
     func updateView() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
