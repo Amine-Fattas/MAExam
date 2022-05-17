@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */; };
+		AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5822833D1B600F9367A /* UsersPresenter.swift */; };
+		AE54E5852833D23700F9367A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5842833D23700F9367A /* UserViewModel.swift */; };
 		AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C332833AD5700F0A7CF /* AppDelegate.swift */; };
 		AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */; };
 		AEC75C3D2833AD5900F0A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIComposer.swift; sourceTree = "<group>"; };
+		AE54E5822833D1B600F9367A /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
+		AE54E5842833D23700F9367A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		AEC75C302833AD5700F0A7CF /* MAExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC75C332833AD5700F0A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE54E5862833D27B00F9367A /* UsersVC */ = {
+			isa = PBXGroup;
+			children = (
+				AEC75C492833AE4400F0A7CF /* UsersVC.swift */,
+				AEC75C4A2833AE4400F0A7CF /* UsersVC.xib */,
+			);
+			path = UsersVC;
+			sourceTree = "<group>";
+		};
+		AE54E5872833D2A100F9367A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E5862833D27B00F9367A /* UsersVC */,
+				AEC75C4D2833BD2300F0A7CF /* UserCell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AE54E5882833D2A900F9367A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E5842833D23700F9367A /* UserViewModel.swift */,
+				AE54E5822833D1B600F9367A /* UsersPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		AEC75C272833AD5700F0A7CF = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +93,9 @@
 		AEC75C322833AD5700F0A7CF /* MAExam */ = {
 			isa = PBXGroup;
 			children = (
-				AEC75C482833AE3200F0A7CF /* UsersVC */,
 				AEC75C332833AD5700F0A7CF /* AppDelegate.swift */,
 				AEC75C352833AD5700F0A7CF /* SceneDelegate.swift */,
+				AEC75C482833AE3200F0A7CF /* Users Module */,
 				AEC75C3C2833AD5900F0A7CF /* Assets.xcassets */,
 				AEC75C3E2833AD5900F0A7CF /* LaunchScreen.storyboard */,
 				AEC75C412833AD5900F0A7CF /* Info.plist */,
@@ -72,15 +103,14 @@
 			path = MAExam;
 			sourceTree = "<group>";
 		};
-		AEC75C482833AE3200F0A7CF /* UsersVC */ = {
+		AEC75C482833AE3200F0A7CF /* Users Module */ = {
 			isa = PBXGroup;
 			children = (
-				AEC75C4D2833BD2300F0A7CF /* UserCell */,
-				AEC75C492833AE4400F0A7CF /* UsersVC.swift */,
-				AEC75C4A2833AE4400F0A7CF /* UsersVC.xib */,
 				AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */,
+				AE54E5882833D2A900F9367A /* Presentation */,
+				AE54E5872833D2A100F9367A /* UI */,
 			);
-			path = UsersVC;
+			path = "Users Module";
 			sourceTree = "<group>";
 		};
 		AEC75C4D2833BD2300F0A7CF /* UserCell */ = {
@@ -169,6 +199,8 @@
 				AEC75C342833AD5700F0A7CF /* AppDelegate.swift in Sources */,
 				AEC75C362833AD5700F0A7CF /* SceneDelegate.swift in Sources */,
 				AEC75C4B2833AE4400F0A7CF /* UsersVC.swift in Sources */,
+				AE54E5852833D23700F9367A /* UserViewModel.swift in Sources */,
+				AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

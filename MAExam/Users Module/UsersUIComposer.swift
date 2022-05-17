@@ -8,7 +8,6 @@
 import UIKit
 
 class UsersUIComposer {
-    
     static func compose(onUserSelection: @escaping (Int) -> Void) -> UIViewController{
         let presenter = UsersPresenter(onUserSelection: { userId in
             onUserSelection(userId)

@@ -7,34 +7,6 @@
 
 import UIKit
 
-class UsersPresenter {
-    var users : [UserItem] = []
-    var onUserSelection: (Int) -> Void
-    
-    init(onUserSelection: @escaping (Int) -> Void) {
-        self.onUserSelection = onUserSelection
-        load()
-    }
-    
-    func load(){
-        users = [
-            UserItem(id: 0, name: "a name", username: "an username", email: "an email"),
-            UserItem(id: 1, name: "a name", username: "an username", email: "an email"),
-            UserItem(id: 2, name: "a name", username: "an username", email: "an email"),
-            UserItem(id: 3, name: "a name", username: "an username", email: "an email"),
-            UserItem(id: 4, name: "a name", username: "an username", email: "an email"),
-            UserItem(id: 5, name: "a name", username: "an username", email: "an email"),
-        ]
-    }
-}
-
-struct UserItem{
-    let id: Int
-    let name: String
-    let username: String
-    let email: String
-}
-
 class UsersVC: UIViewController {
     //MARK: - Outlets -
     @IBOutlet weak var tableView: UITableView!
