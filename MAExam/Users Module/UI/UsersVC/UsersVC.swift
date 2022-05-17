@@ -15,6 +15,7 @@ class UsersVC: UIViewController {
     private let CELL_ID = "UserCell"
     
     var presenter: UsersPresenter!
+    let refreshControl = UIRefreshControl()
     
     //MARK: - init methods -
     init(presenter: UsersPresenter, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -32,6 +33,15 @@ class UsersVC: UIViewController {
         super.viewDidLoad()
         initUI()
         initTableView()
+        initRefreshControl()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadUsers()
+    }
+    
+    private func loadUsers(){
+        refreshControl.beginRefreshing()
         presenter.loadUsers()
     }
     
@@ -43,9 +53,11 @@ class UsersVC: UIViewController {
     
     private func initUI(){
         title = "Users"
+        refreshControl.tintColor = .orange
+        if tableView.contentOffset.y == 0{
+            tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
+        }
     }
-
-
 }
 
 //MARK: - UITableView Delegate and DataSource -
@@ -67,19 +79,34 @@ extension UsersVC : UITableViewDataSource, UITableViewDelegate {
         presenter.onUserSelection(indexPath.row)
     }
 }
-
+//MARK: - UsersView Delegate -
 extension UsersVC: UsersView {
     func updateView() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
+        }
+    }
+}
+//MARK: - ErrorView Delegate -
+extension UsersVC: ErrorView {
+    func showError(error: Error) {
+        let onDismiss = refreshControl.endRefreshing
+        DispatchQueue.main.async { [weak self] in
+            self?.showAlert(error: error, onDismiss: onDismiss)
         }
     }
 }
 
-extension UsersVC: ErrorView {
-    func showError(error: Error) {
-        DispatchQueue.main.async { [weak self] in
-            self?.showAlert(error: error)
-        }
+//MARK: - Refresh Controller -
+extension UsersVC {
+    private func initRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.onRefresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc private func onRefresh(_ sender: Any){
+        presenter.loadUsers()
     }
 }

@@ -8,9 +8,11 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(error: Error){
+    func showAlert(error: Error, onDismiss: @escaping () -> Void){
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            onDismiss()
+        }))
         present(alert, animated: true)
     }
 }

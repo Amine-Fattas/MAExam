@@ -30,7 +30,7 @@ class RemoteUsersInteractor {
                         completion(.success(users))
                     }
                     catch {
-                        completion(.failure(error))
+                        completion(.failure(NSError(domain: "Invalid Data", code: 0)))
                     }
                 } else {
                     completion(.failure(NSError(domain: "Not successful", code: 0)))
