@@ -7,23 +7,36 @@
 
 import Foundation
 
+protocol UsersView : NSObject{
+    func updateView()
+}
+
+protocol ErrorView : NSObject{
+    func showError(error: Error)
+}
+
 class UsersPresenter {
-    var users : [UserViewModel] = []
+    var users : [UserItem] = []
     var onUserSelection: (Int) -> Void
+    var interactor: RemoteUsersInteractor
+    weak var usersView: UsersView?
+    weak var errorView: ErrorView?
     
-    init(onUserSelection: @escaping (Int) -> Void) {
+    init(interactor: RemoteUsersInteractor,
+         onUserSelection: @escaping (Int) -> Void) {
         self.onUserSelection = onUserSelection
-        load()
+        self.interactor = interactor
     }
     
-    func load(){
-        users = [
-            UserViewModel(id: 0, name: "a name", username: "an username", email: "an email"),
-            UserViewModel(id: 1, name: "a name", username: "an username", email: "an email"),
-            UserViewModel(id: 2, name: "a name", username: "an username", email: "an email"),
-            UserViewModel(id: 3, name: "a name", username: "an username", email: "an email"),
-            UserViewModel(id: 4, name: "a name", username: "an username", email: "an email"),
-            UserViewModel(id: 5, name: "a name", username: "an username", email: "an email"),
-        ]
+    func loadUsers(){
+        interactor.load(completion: { [weak self] result in
+            switch result {
+            case let .success(users):
+                self?.users = users
+                self?.usersView!.updateView()
+            case let .failure(error):
+                self?.errorView!.showError(error: error)
+            }
+        })
     }
 }

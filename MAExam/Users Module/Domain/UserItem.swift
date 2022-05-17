@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserViewModel{
+struct UserItem{
     let id: Int
     let name: String
     let username: String

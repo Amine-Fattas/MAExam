@@ -20,6 +20,8 @@ class UsersVC: UIViewController {
     init(presenter: UsersPresenter, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.presenter = presenter
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.presenter.usersView = self
+        self.presenter.errorView = self
     }
     
     required init?(coder: NSCoder) {
@@ -30,6 +32,7 @@ class UsersVC: UIViewController {
         super.viewDidLoad()
         initUI()
         initTableView()
+        presenter.loadUsers()
     }
     
     private func initTableView(){
@@ -62,5 +65,25 @@ extension UsersVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.onUserSelection(indexPath.row)
+    }
+}
+
+extension UsersVC: UsersView {
+    func updateView() {
+        tableView.reloadData()
+    }
+}
+
+extension UsersVC: ErrorView {
+    func showError(error: Error) {
+        showAlert(error: error)
+    }
+}
+
+extension UIViewController {
+    func showAlert(error: Error){
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }
