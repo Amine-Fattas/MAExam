@@ -55,9 +55,7 @@ extension UsersVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID) as! UserCell
         let user = presenter.users[indexPath.row]
-        cell.ul_name.text = user.name
-        cell.ul_username.text = user.username
-        cell.ul_email.text = user.email
+        cell.setup(name: user.name, username: user.username, email: user.email)
         return cell
     }
     

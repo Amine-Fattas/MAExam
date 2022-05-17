@@ -30,10 +30,10 @@ class UserCell: UITableViewCell {
         ul_name.layer.masksToBounds = true
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
+    func setup(name: String, username: String, email: String) {
+        ul_name.text = name
+        ul_username.text = username
+        ul_email.text = email
     }
     
 }
