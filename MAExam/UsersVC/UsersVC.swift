@@ -7,12 +7,24 @@
 
 import UIKit
 
+struct UserViewModel {
+    var users : [UserItem]
+}
+
+struct UserItem{
+    let name: String
+    let username: String
+    let email: String
+}
+
 class UsersVC: UIViewController {
     //MARK: - Outlets -
     @IBOutlet weak var tableView: UITableView!
 
-    //MARK: - Prpperties -
+    //MARK: - Properties -
     private let CELL_ID = "UserCell"
+    
+    var viewModel = UserViewModel(users: [])
     
     //MARK: - init methods -
     override func viewDidLoad() {
@@ -38,11 +50,15 @@ class UsersVC: UIViewController {
 extension UsersVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        self.viewModel.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID) as! UserCell
+        let user = viewModel.users[indexPath.row]
+        cell.ul_name.text = user.name
+        cell.ul_username.text = user.username
+        cell.ul_email.text = user.email
         return cell
     }
     
