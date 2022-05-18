@@ -24,18 +24,19 @@
                                 <rect key="frame" x="10" y="5" width="290" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH7-p4-mIF">
-                                        <rect key="frame" x="0.0" y="21" width="220" height="18"/>
+                                        <rect key="frame" x="0.0" y="21" width="250" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bxi-LH-kEK">
-                                        <rect key="frame" x="230" y="14.5" width="62" height="31"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Os-WD-tMS">
+                                        <rect key="frame" x="260" y="15.5" width="30" height="29"/>
+                                        <color key="tintColor" red="0.92156862750000001" green="0.36470588240000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="Nmq-ya-wht"/>
+                                            <constraint firstAttribute="height" constant="30" id="uAg-eQ-MW2"/>
+                                            <constraint firstAttribute="width" constant="30" id="xrA-Fa-h8p"/>
                                         </constraints>
-                                        <color key="onTintColor" red="0.92156862750000001" green="0.36470588240000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </switch>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -57,13 +58,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="sw_completed" destination="Bxi-LH-kEK" id="enj-uf-4ne"/>
+                <outlet property="ic_completed" destination="6Os-WD-tMS" id="Dtw-4P-Yjp"/>
                 <outlet property="ul_title" destination="wH7-p4-mIF" id="yiM-gU-rTc"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

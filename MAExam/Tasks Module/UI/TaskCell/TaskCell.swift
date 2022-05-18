@@ -10,20 +10,16 @@ import UIKit
 class TaskCell: UITableViewCell {
     
     @IBOutlet weak var ul_title: UILabel!
-    @IBOutlet weak var sw_completed: UISwitch!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        initUI()
-    }
-    
-    private func initUI(){
-        sw_completed.isUserInteractionEnabled = false
-    }
+    @IBOutlet weak var ic_completed: UIImageView!
     
     func setup(title: String, completed: Bool){
         ul_title.text = title
-        sw_completed.isOn = completed
+        setCheckMark(checked: completed)
+    }
+    
+    private func setCheckMark(checked: Bool){
+        let icName = checked ? "checkmark.circle.fill" : "circle"
+        ic_completed.image = UIImage(systemName: icName)
     }
     
 }

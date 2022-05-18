@@ -13,7 +13,6 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var ul_name: UILabel!
     @IBOutlet weak var ul_username: UILabel!
     @IBOutlet weak var ul_email: UILabel!
-    
     @IBOutlet weak var uv_container: UIView!
     
     //MARK: - init methods -
@@ -35,5 +34,4 @@ class UserCell: UITableViewCell {
         ul_username.text = username
         ul_email.text = email
     }
-    
 }
