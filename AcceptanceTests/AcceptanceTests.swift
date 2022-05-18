@@ -24,15 +24,15 @@ class AcceptanceTests: XCTestCase {
     }
 
     func test_onLaunch_displaysCachedUsersWhenCustomerHasNoConnectivity() {
-//        let sharedStore = CacheStoreStub.empty
-//        let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
-//        onlineFeed.simulateViewWillAppear()
-//
-//        let offlineFeed = launch(httpClient: .offline, store: sharedStore)
-//
-//        XCTAssertEqual(offlineFeed.numberOfRenderedUsers(), 2)
-//        XCTAssertEqual(usersVC.renderedUserData(at: 0), user1)
-//        XCTAssertEqual(usersVC.renderedUserData(at: 1), user2)
+        let sharedStore = CacheStoreStub.empty
+        let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
+        onlineFeed.simulateViewWillAppear()
+
+        let offlineFeed = launch(httpClient: .offline, store: sharedStore)
+        offlineFeed.simulateViewWillAppear()
+        XCTAssertEqual(offlineFeed.numberOfRenderedUsers(), 2)
+        XCTAssertEqual(offlineFeed.renderedUserData(at: 0), userDictWithoutId(user: user1))
+        XCTAssertEqual(offlineFeed.renderedUserData(at: 1), userDictWithoutId(user: user2))
     }
 
     func test_onLaunch_displaysAlertWhenCustomerHasNoConnectivityAndNoCache() {
