@@ -7,12 +7,12 @@
 
 import Foundation
 
-class RemoteUsersInteractor : UsersInteractor{
+public class RemoteUsersInteractor : UsersInteractor{
     
     private let httpClient: HTTPClient
     private let urlString : String
     
-    init(httpClient: HTTPClient, urlString : String){
+    public init(httpClient: HTTPClient, urlString : String){
         self.httpClient = httpClient
         self.urlString  = urlString
     }
@@ -42,13 +42,3 @@ class RemoteUsersInteractor : UsersInteractor{
         })
     }
 }
-
-
-let users = [
-    UserItem(id: 0, name: "a name", username: "an username", email: "an email"),
-    UserItem(id: 1, name: "a name", username: "an username", email: "an email"),
-    UserItem(id: 2, name: "a name", username: "an username", email: "an email"),
-    UserItem(id: 3, name: "a name", username: "an username", email: "an email"),
-    UserItem(id: 4, name: "a name", username: "an username", email: "an email"),
-    UserItem(id: 5, name: "a name", username: "an username", email: "an email"),
-]

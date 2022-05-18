@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol TasksSaver {
+public protocol TasksSaver {
     func save(tasks: [TaskItem])
 }
 
-struct TasksInteractorWithFallback: TasksInteractor {
+public struct TasksInteractorWithFallback: TasksInteractor {
     let primary : TasksInteractor
     let fallback: TasksInteractor & TasksSaver
-    func load(completion: @escaping (Result<[TaskItem], Error>) -> Void) {
+    public func load(completion: @escaping (Result<[TaskItem], Error>) -> Void) {
         primary.load{ result in
             switch result {
             case .success:

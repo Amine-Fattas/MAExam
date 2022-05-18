@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TasksInteractor {
+public protocol TasksInteractor {
     func load(completion: @escaping (Result<[TaskItem], Error>) -> Void)
 }

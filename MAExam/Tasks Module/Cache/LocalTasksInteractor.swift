@@ -7,17 +7,17 @@
 
 import Foundation
 
-class LocalTasksInteractor : TasksInteractor {
+public class LocalTasksInteractor : TasksInteractor {
     
     private let KEY: String
     private let cacheStore: CacheStore
     
-    init(cacheStore: CacheStore, KEY: String){
+    public init(cacheStore: CacheStore, KEY: String){
         self.KEY = KEY
         self.cacheStore = cacheStore
     }
     
-    func load(completion: @escaping (Result<[TaskItem], Error>) -> Void) {
+    public func load(completion: @escaping (Result<[TaskItem], Error>) -> Void) {
         cacheStore.load(KEY: KEY,completion: { result in
             switch result {
             case let .success(data):
@@ -36,7 +36,7 @@ class LocalTasksInteractor : TasksInteractor {
 }
 
 extension LocalTasksInteractor : TasksSaver{
-    func save(tasks: [TaskItem]){
+    public func save(tasks: [TaskItem]){
         do {
             let data = try JSONEncoder().encode(tasks)
             cacheStore.save(data: data, KEY: KEY)

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class UsersUIComposer {
+public class UsersUIComposer {
     static let TITLE = "Users"
     
-    static func compose(httpClient: HTTPClient,
+    public static func compose(httpClient: HTTPClient,
                         cacheStore: CacheStore,
                         urlString : String,
                         onUserSelection: @escaping (Int, String) -> Void) -> UIViewController{

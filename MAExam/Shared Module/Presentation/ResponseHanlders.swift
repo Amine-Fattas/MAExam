@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol ListView : NSObject{
+public protocol ListView : NSObject{
     func updateView()
 }
 
-protocol ErrorView : NSObject{
+public protocol ErrorView : NSObject{
     func showError(error: Error)
 }

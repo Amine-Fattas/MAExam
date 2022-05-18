@@ -7,16 +7,16 @@
 
 import Foundation
 
-class LocalUsersInteractor : UsersInteractor {
+public class LocalUsersInteractor : UsersInteractor {
     
     private let KEY = "users"
     private let cacheStore: CacheStore
     
-    init(cacheStore: CacheStore){
+    public init(cacheStore: CacheStore){
         self.cacheStore = cacheStore
     }
     
-    func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
+    public func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
         cacheStore.load(KEY: KEY,completion: { result in
             switch result {
             case let .success(data):
@@ -35,7 +35,7 @@ class LocalUsersInteractor : UsersInteractor {
 }
 
 extension LocalUsersInteractor : UsersSaver{
-    func save(users: [UserItem]){
+    public func save(users: [UserItem]){
         do {
             let data = try JSONEncoder().encode(users)
             cacheStore.save(data: data, KEY: KEY)

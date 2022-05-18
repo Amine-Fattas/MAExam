@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol UsersSaver {
+public protocol UsersSaver {
     func save(users: [UserItem])
 }
 
-struct UsersInteractorWithFallback: UsersInteractor {
+public struct UsersInteractorWithFallback: UsersInteractor {
     let primary : UsersInteractor
     let fallback: UsersInteractor & UsersSaver
-    func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
+    public func load(completion: @escaping (Result<[UserItem], Error>) -> Void) {
         primary.load{ result in
             switch result {
             case .success:

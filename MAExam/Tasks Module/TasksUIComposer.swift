@@ -7,10 +7,10 @@
 
 import UIKit
 
-class TasksUIComposer {
+public class TasksUIComposer {
     static let TITLE = "Tasks"
     
-    static func compose(httpClient: HTTPClient, cacheStore: CacheStore,
+    public static func compose(httpClient: HTTPClient, cacheStore: CacheStore,
                         urlString : String, userId: String, name: String) -> UIViewController{
         let remoteInteractor = RemoteTasksInteractor(
             httpClient: httpClient,

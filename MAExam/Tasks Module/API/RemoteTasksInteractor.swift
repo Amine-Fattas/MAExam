@@ -7,12 +7,12 @@
 
 import Foundation
 
-class RemoteTasksInteractor : TasksInteractor{
+public class RemoteTasksInteractor : TasksInteractor{
     
     private let httpClient: HTTPClient
     private let urlString : String
     
-    init(httpClient: HTTPClient, urlString: String){
+    public init(httpClient: HTTPClient, urlString: String){
         self.httpClient = httpClient
         self.urlString = urlString
     }

@@ -7,15 +7,15 @@
 
 import Foundation
 
-class UsersPresenter {
-    let title: String
-    let onUserSelection: (Int, String) -> Void
-    let interactor : UsersInteractorWithFallback
-    var users : [UserItem] = []
+public class UsersPresenter {
+    public let title: String
+    public let onUserSelection: (Int, String) -> Void
+    public let interactor : UsersInteractorWithFallback
+    public var users : [UserItem] = []
     weak var listView: ListView?
     weak var errorView: ErrorView?
     
-    init(title: String,
+    public init(title: String,
          interactor: UsersInteractorWithFallback,
          onUserSelection: @escaping (Int, String) -> Void) {
         self.title = title
@@ -23,7 +23,7 @@ class UsersPresenter {
         self.onUserSelection = onUserSelection
     }
     
-    func loadUsers(){
+    public func loadUsers(){
         interactor.load { [weak self] result in
             switch result {
             case let .success(users):
