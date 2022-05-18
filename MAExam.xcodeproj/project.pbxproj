@@ -16,6 +16,11 @@
 		AE0AF595283533C60081871B /* AcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF594283533C60081871B /* AcceptanceTests.swift */; };
 		AE0AF59D283536B10081871B /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF59C283536B10081871B /* HTTPClientStub.swift */; };
 		AE0AF59F2835378E0081871B /* CacheStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF59E2835378E0081871B /* CacheStoreStub.swift */; };
+		AE0AF5A1283578C10081871B /* UsersVC+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5A0283578C10081871B /* UsersVC+TestHelpers.swift */; };
+		AE0AF5A3283578E90081871B /* SceneDelegate+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5A2283578E90081871B /* SceneDelegate+TestHelpers.swift */; };
+		AE0AF5A52835790F0081871B /* UIViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5A42835790F0081871B /* UIViewController+TestHelpers.swift */; };
+		AE0AF5A7283579F00081871B /* UserCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5A6283579F00081871B /* UserCell+TestHelpers.swift */; };
+		AE0AF5A928357A3D0081871B /* Dictionary+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF5A828357A3D0081871B /* Dictionary+TestHelpers.swift */; };
 		AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */; };
 		AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5822833D1B600F9367A /* UsersPresenter.swift */; };
 		AE54E5852833D23700F9367A /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5842833D23700F9367A /* UserItem.swift */; };
@@ -65,6 +70,11 @@
 		AE0AF594283533C60081871B /* AcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTests.swift; sourceTree = "<group>"; };
 		AE0AF59C283536B10081871B /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
 		AE0AF59E2835378E0081871B /* CacheStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStoreStub.swift; sourceTree = "<group>"; };
+		AE0AF5A0283578C10081871B /* UsersVC+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersVC+TestHelpers.swift"; sourceTree = "<group>"; };
+		AE0AF5A2283578E90081871B /* SceneDelegate+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+TestHelpers.swift"; sourceTree = "<group>"; };
+		AE0AF5A42835790F0081871B /* UIViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TestHelpers.swift"; sourceTree = "<group>"; };
+		AE0AF5A6283579F00081871B /* UserCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCell+TestHelpers.swift"; sourceTree = "<group>"; };
+		AE0AF5A828357A3D0081871B /* Dictionary+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+TestHelpers.swift"; sourceTree = "<group>"; };
 		AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIComposer.swift; sourceTree = "<group>"; };
 		AE54E5822833D1B600F9367A /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		AE54E5842833D23700F9367A /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
@@ -161,6 +171,11 @@
 			children = (
 				AE0AF59C283536B10081871B /* HTTPClientStub.swift */,
 				AE0AF59E2835378E0081871B /* CacheStoreStub.swift */,
+				AE0AF5A828357A3D0081871B /* Dictionary+TestHelpers.swift */,
+				AE0AF5A42835790F0081871B /* UIViewController+TestHelpers.swift */,
+				AE0AF5A2283578E90081871B /* SceneDelegate+TestHelpers.swift */,
+				AE0AF5A0283578C10081871B /* UsersVC+TestHelpers.swift */,
+				AE0AF5A6283579F00081871B /* UserCell+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -477,7 +492,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0AF5A52835790F0081871B /* UIViewController+TestHelpers.swift in Sources */,
+				AE0AF5A3283578E90081871B /* SceneDelegate+TestHelpers.swift in Sources */,
 				AE0AF59F2835378E0081871B /* CacheStoreStub.swift in Sources */,
+				AE0AF5A928357A3D0081871B /* Dictionary+TestHelpers.swift in Sources */,
+				AE0AF5A1283578C10081871B /* UsersVC+TestHelpers.swift in Sources */,
+				AE0AF5A7283579F00081871B /* UserCell+TestHelpers.swift in Sources */,
 				AE0AF59D283536B10081871B /* HTTPClientStub.swift in Sources */,
 				AE0AF595283533C60081871B /* AcceptanceTests.swift in Sources */,
 			);

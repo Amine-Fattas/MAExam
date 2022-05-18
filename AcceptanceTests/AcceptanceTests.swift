@@ -9,8 +9,6 @@ import XCTest
 @testable import MAExam
 
 class AcceptanceTests: XCTestCase {
-    
-    var tableView : UITableView?
 
     func test_onLaunch_displaysRemoteUsersWhenCustomerHasConnectivity() {
         let (_, usersVC) = launch(httpClient: .online(response), store: .empty)
@@ -116,55 +114,5 @@ class AcceptanceTests: XCTestCase {
                 expectation.fulfill()
               })
         wait(for: [expectation], timeout: 1.5)
-    }
-}
-
-
-extension SceneDelegate {
-    convenience init(httpClient: HTTPClient, cacheStore: CacheStore) {
-        self.init()
-        self.httpClient = httpClient
-        self.cacheStore = cacheStore
-    }
-}
-
-extension UsersVC {
-    func numberOfRenderedUsers() -> Int {
-        tableView.numberOfRows(inSection: 0)
-    }
-    
-    func renderedUserData(at index: Int) -> NSDictionary {
-        let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! UserCell
-        let dict = cell.getDictFromModel()
-        return dict.toNSDictionary
-    }
-    
-    func simulateTapOnUserItem(at row: Int) {
-        let delegate = tableView.delegate
-        let index = IndexPath(row: row, section: 0)
-        delegate?.tableView?(tableView, didSelectRowAt: index)
-    }
-}
-
-extension UIViewController {
-    func simulateViewWillAppear(){
-        loadViewIfNeeded()
-        beginAppearanceTransition(true, animated: false)
-    }
-}
-
-extension UserCell {
-     func getDictFromModel() -> [String: Any]{
-        [
-            "name": ul_name.text ?? "",
-            "username": ul_username.text ?? "",
-            "email": ul_email.text ?? "",
-        ]
-    }
-}
-
-extension Dictionary {
-    var toNSDictionary : NSDictionary {
-        NSDictionary(dictionary: self, copyItems: true)
     }
 }
