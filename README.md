@@ -1,6 +1,7 @@
 # MAExam
 
 ## Overview:
+- Deployment Target : **iOS 15.4**
 - The projet follows a modular design inspired from VIPER architecture
 - The projet contains 2 independant modules (Users, Tasks) that both depend on a Shared Module arranged verticaly (by feature).
 - Each module module contains layers that are arranged horizontaly (by dependency level).
