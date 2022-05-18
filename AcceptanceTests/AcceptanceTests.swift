@@ -13,7 +13,7 @@ class AcceptanceTests: XCTestCase {
     var tableView : UITableView?
 
     func test_onLaunch_displaysRemoteUsersWhenCustomerHasConnectivity() {
-        let usersVC = launch(httpClient: .online(response), store: .empty)
+        let (_, usersVC) = launch(httpClient: .online(response), store: .empty)
         usersVC.simulateViewWillAppear()
         
         XCTAssertEqual(usersVC.numberOfRenderedUsers(), 2)
@@ -25,49 +25,54 @@ class AcceptanceTests: XCTestCase {
 
     func test_onLaunch_displaysCachedUsersWhenCustomerHasNoConnectivity() {
         let sharedStore = CacheStoreStub.empty
-        let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
+        let (_, onlineFeed) = launch(httpClient: .online(response), store: sharedStore)
         onlineFeed.simulateViewWillAppear()
 
-        let offlineFeed = launch(httpClient: .offline, store: sharedStore)
+        let (_, offlineFeed) = launch(httpClient: .offline, store: sharedStore)
         offlineFeed.simulateViewWillAppear()
+        
         XCTAssertEqual(offlineFeed.numberOfRenderedUsers(), 2)
         XCTAssertEqual(offlineFeed.renderedUserData(at: 0), userDictWithoutId(user: user1))
         XCTAssertEqual(offlineFeed.renderedUserData(at: 1), userDictWithoutId(user: user2))
     }
 
     func test_onLaunch_displaysAlertWhenCustomerHasNoConnectivityAndNoCache() {
-//        let feed = launch(httpClient: .offline, store: .empty)
-//
-//        XCTAssertEqual(feed.numberOfRenderedFeedImageViews(), 0)
+        let sharedStore = CacheStoreStub.empty
+        let (_, offlineFeed) = launch(httpClient: .offline, store: sharedStore)
+        
+        offlineFeed.simulateViewWillAppear()
+        
+        XCTAssertEqual(offlineFeed.numberOfRenderedUsers(), 0)
     }
 
-    func test_onEnteringBackground_keepsNonExpiredUsersCache() {
-//        let store = InMemoryFeedStore.withNonExpiredFeedCache
-//
-//        enterBackground(with: store)
-//
-//        XCTAssertNotNil(store.feedCache, "Expected to keep non-expired cache")
-    }
-
-    func test_onUserSelection_displaysTasks() {
-//        let comments = showCommentsForFirstImage()
-//
-//        XCTAssertEqual(comments.numberOfRenderedImageCommentsViews(), 1)
-//        XCTAssertEqual(comments.commentMessage(at: 0), makeImageCommentMessage())
+    func test_onUserSelection_invokTasksVC() {
+        let (sceneDelegate, usersVC) = launch(httpClient: .online(response), store: .empty)
+        /// just to silence the warning : value 'sceneDelegate' was never used
+        let _ = sceneDelegate
+        usersVC.simulateViewWillAppear()
+        
+        usersVC.simulateTapOnUserItem(at: 1)
+        RunLoop.current.run(until: Date() + 10)
+        
+        
+        let nav = usersVC.navigationController
+        let tasksVC = nav?.topViewController as? TasksVC
+        
+        XCTAssertNotNil(tasksVC)
     }
     
     //MARK: - Helpers -
     private func launch(
         httpClient: HTTPClientStub = .offline,
         store: CacheStoreStub = .empty
-    ) -> UsersVC {
+    ) -> (SceneDelegate, UsersVC) {
         let sut = SceneDelegate(httpClient: httpClient, cacheStore: store)
         sut.window = UIWindow()
         sut.configureWindow()
 
         let nav = sut.window?.rootViewController as? UINavigationController
         let userVC = nav?.topViewController as! UsersVC
-        return userVC
+        return (sut, userVC)
     }
     
     private func response(for url: URL) -> (Data, HTTPURLResponse) {
@@ -122,6 +127,12 @@ extension UsersVC {
         let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! UserCell
         let dict = cell.getDictFromModel()
         return dict.toNSDictionary
+    }
+    
+    func simulateTapOnUserItem(at row: Int) {
+        let delegate = tableView.delegate
+        let index = IndexPath(row: row, section: 0)
+        delegate?.tableView?(tableView, didSelectRowAt: index)
     }
 }
 

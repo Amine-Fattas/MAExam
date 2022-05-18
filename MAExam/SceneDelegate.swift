@@ -51,7 +51,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.pushViewController(vc, animated: true)
         print("Selected ID: ", userId)
     }
-
-
+    
 }
 
