@@ -14,6 +14,8 @@
 		AE0AF58A283467190081871B /* LocalTasksInteractor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF589283467190081871B /* LocalTasksInteractor+Helpers.swift */; };
 		AE0AF58D2834674A0081871B /* CacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF58C2834674A0081871B /* CacheStore.swift */; };
 		AE0AF595283533C60081871B /* AcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF594283533C60081871B /* AcceptanceTests.swift */; };
+		AE0AF59D283536B10081871B /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF59C283536B10081871B /* HTTPClientStub.swift */; };
+		AE0AF59F2835378E0081871B /* CacheStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0AF59E2835378E0081871B /* CacheStoreStub.swift */; };
 		AE54E5812833CF9F00F9367A /* UsersUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */; };
 		AE54E5832833D1B600F9367A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5822833D1B600F9367A /* UsersPresenter.swift */; };
 		AE54E5852833D23700F9367A /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E5842833D23700F9367A /* UserItem.swift */; };
@@ -61,6 +63,8 @@
 		AE0AF58C2834674A0081871B /* CacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStore.swift; sourceTree = "<group>"; };
 		AE0AF592283533C60081871B /* AcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0AF594283533C60081871B /* AcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTests.swift; sourceTree = "<group>"; };
+		AE0AF59C283536B10081871B /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
+		AE0AF59E2835378E0081871B /* CacheStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStoreStub.swift; sourceTree = "<group>"; };
 		AE54E5802833CF9F00F9367A /* UsersUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIComposer.swift; sourceTree = "<group>"; };
 		AE54E5822833D1B600F9367A /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		AE54E5842833D23700F9367A /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
@@ -146,9 +150,19 @@
 		AE0AF593283533C60081871B /* AcceptanceTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE0AF59B2835369C0081871B /* Helpers */,
 				AE0AF594283533C60081871B /* AcceptanceTests.swift */,
 			);
 			path = AcceptanceTests;
+			sourceTree = "<group>";
+		};
+		AE0AF59B2835369C0081871B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE0AF59C283536B10081871B /* HTTPClientStub.swift */,
+				AE0AF59E2835378E0081871B /* CacheStoreStub.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		AE54E5862833D27B00F9367A /* UsersVC */ = {
@@ -463,6 +477,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0AF59F2835378E0081871B /* CacheStoreStub.swift in Sources */,
+				AE0AF59D283536B10081871B /* HTTPClientStub.swift in Sources */,
 				AE0AF595283533C60081871B /* AcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

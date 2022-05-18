@@ -6,15 +6,31 @@
 //
 
 import XCTest
+@testable import MAExam
 
 class AcceptanceTests: XCTestCase {
+    
+    var tableView : UITableView?
 
     func test_onLaunch_displaysRemoteUsersWhenCustomerHasConnectivity() {
-//        let feed = launch(httpClient: .online(response), store: .empty)
-//
-//        XCTAssertEqual(feed.numberOfRenderedFeedImageViews(), 2)
-//        XCTAssertEqual(feed.renderedFeedImageData(at: 0), makeImageData())
-//        XCTAssertEqual(feed.renderedFeedImageData(at: 1), makeImageData())
+        let usersVC = launch(httpClient: .online(response), store: .empty)
+        usersVC.simulateViewWillAppear()
+        
+        let user1 : [String : String] = [
+            "name": "a name",
+            "username": "an username",
+            "email": "an email",
+        ]
+        
+        let user2 : [String : String] = [
+            "name": "another name",
+            "username": "another username",
+            "email": "another email",
+        ]
+        
+        XCTAssertEqual(usersVC.numberOfRenderedUsers(), 2)
+        XCTAssertEqual(usersVC.renderedUserData(at: 0), user1)
+        XCTAssertEqual(usersVC.renderedUserData(at: 1), user2)
     }
 
     func test_onLaunch_displaysCachedUsersWhenCustomerHasNoConnectivity() {
@@ -50,5 +66,83 @@ class AcceptanceTests: XCTestCase {
 //        XCTAssertEqual(comments.numberOfRenderedImageCommentsViews(), 1)
 //        XCTAssertEqual(comments.commentMessage(at: 0), makeImageCommentMessage())
     }
+    
+    //MARK: - Helpers -
+    private func launch(
+        httpClient: HTTPClientStub = .offline,
+        store: CacheStoreStub = .empty
+    ) -> UsersVC {
+        let sut = SceneDelegate(httpClient: httpClient, cacheStore: store)
+        sut.window = UIWindow()
+        sut.configureWindow()
 
+        let nav = sut.window?.rootViewController as? UINavigationController
+        let userVC = nav?.topViewController as! UsersVC
+        return userVC
+    }
+    
+    private func response(for url: URL) -> (Data, HTTPURLResponse) {
+        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        return (makeData(from: [user1, user2]), response)
+    }
+    
+    private func makeData(from object: Any) -> Data {
+        return try! JSONSerialization.data(withJSONObject: object)
+    }
+    
+    private var user1 : [String : Any] {
+        [
+            "id": 1,
+            "name": "a name",
+            "username": "an username",
+            "email": "an email",
+        ]
+    }
+    
+    private var user2 : [String : Any] {
+        [
+            "id": 2,
+            "name": "another name",
+            "username": "another username",
+            "email": "another email",
+        ]
+    }
+}
+
+
+extension SceneDelegate {
+    convenience init(httpClient: HTTPClient, cacheStore: CacheStore) {
+        self.init()
+        self.httpClient = httpClient
+        self.cacheStore = cacheStore
+    }
+}
+
+extension UsersVC {
+    func numberOfRenderedUsers() -> Int {
+        tableView.numberOfRows(inSection: 0)
+    }
+    
+    func renderedUserData(at index: Int) -> [String: String]{
+        let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! UserCell
+        let dict = cell.getDictFromModel()
+        return dict
+    }
+}
+
+extension UIViewController {
+    func simulateViewWillAppear(){
+        loadViewIfNeeded()
+        beginAppearanceTransition(true, animated: false)
+    }
+}
+
+extension UserCell {
+     func getDictFromModel() -> [String: String]{
+        [
+            "name": ul_name.text ?? "",
+            "username": ul_username.text ?? "",
+            "email": ul_email.text ?? "",
+        ]
+    }
 }

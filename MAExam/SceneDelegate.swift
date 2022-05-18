@@ -11,11 +11,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    private lazy var httpClient: HTTPClient = {
+    lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient()
     }()
     
-    private lazy var cacheStore: CacheStore = {
+    lazy var cacheStore: CacheStore = {
         NSCacheStore(cache: NSCache<NSString, NSData>())
     }()
     
@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         configureWindow()
     }
     
-    private func configureWindow(){
+    func configureWindow(){
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

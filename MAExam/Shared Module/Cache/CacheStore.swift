@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CacheStore {
+public protocol CacheStore {
     func save(data: Data, KEY: String)
     func load(KEY: String, completion: @escaping (Result<Data, Error>) -> Void)
 }
