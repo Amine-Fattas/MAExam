@@ -43,6 +43,7 @@ class AcceptanceTests: XCTestCase {
         offlineFeed.simulateViewWillAppear()
         
         XCTAssertEqual(offlineFeed.numberOfRenderedUsers(), 0)
+        expectAlertControllerToShow(in: offlineFeed)
     }
 
     func test_onUserSelection_invokTasksVC() {
@@ -106,6 +107,15 @@ class AcceptanceTests: XCTestCase {
         var user: Dictionary<String, Any> = user
         user.removeValue(forKey: "id")
         return user.toNSDictionary
+    }
+    
+    private func expectAlertControllerToShow(in vc: UIViewController){
+        let expectation = XCTestExpectation(description: "Error alert")
+              DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                  XCTAssertTrue(vc.navigationController?.presentedViewController is UIAlertController)
+                expectation.fulfill()
+              })
+        wait(for: [expectation], timeout: 1.5)
     }
 }
 
