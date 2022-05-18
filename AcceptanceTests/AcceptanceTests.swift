@@ -16,34 +16,23 @@ class AcceptanceTests: XCTestCase {
         let usersVC = launch(httpClient: .online(response), store: .empty)
         usersVC.simulateViewWillAppear()
         
-        let user1 : [String : String] = [
-            "name": "a name",
-            "username": "an username",
-            "email": "an email",
-        ]
-        
-        let user2 : [String : String] = [
-            "name": "another name",
-            "username": "another username",
-            "email": "another email",
-        ]
-        
         XCTAssertEqual(usersVC.numberOfRenderedUsers(), 2)
-        XCTAssertEqual(usersVC.renderedUserData(at: 0), user1)
-        XCTAssertEqual(usersVC.renderedUserData(at: 1), user2)
+        XCTAssertEqual(usersVC.renderedUserData(at: 0),
+                       userDictWithoutId(user: user1))
+        XCTAssertEqual(usersVC.renderedUserData(at: 1),
+                       userDictWithoutId(user: user2))
     }
 
     func test_onLaunch_displaysCachedUsersWhenCustomerHasNoConnectivity() {
-//        let sharedStore = InMemoryFeedStore.empty
+//        let sharedStore = CacheStoreStub.empty
 //        let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
-//        onlineFeed.simulateFeedImageViewVisible(at: 0)
-//        onlineFeed.simulateFeedImageViewVisible(at: 1)
+//        onlineFeed.simulateViewWillAppear()
 //
 //        let offlineFeed = launch(httpClient: .offline, store: sharedStore)
 //
-//        XCTAssertEqual(offlineFeed.numberOfRenderedFeedImageViews(), 2)
-//        XCTAssertEqual(offlineFeed.renderedFeedImageData(at: 0), makeImageData())
-//        XCTAssertEqual(offlineFeed.renderedFeedImageData(at: 1), makeImageData())
+//        XCTAssertEqual(offlineFeed.numberOfRenderedUsers(), 2)
+//        XCTAssertEqual(usersVC.renderedUserData(at: 0), user1)
+//        XCTAssertEqual(usersVC.renderedUserData(at: 1), user2)
     }
 
     func test_onLaunch_displaysAlertWhenCustomerHasNoConnectivityAndNoCache() {
@@ -107,6 +96,12 @@ class AcceptanceTests: XCTestCase {
             "email": "another email",
         ]
     }
+    
+    private func userDictWithoutId(user : [String : Any]) -> NSDictionary {
+        var user: Dictionary<String, Any> = user
+        user.removeValue(forKey: "id")
+        return user.toNSDictionary
+    }
 }
 
 
@@ -123,10 +118,10 @@ extension UsersVC {
         tableView.numberOfRows(inSection: 0)
     }
     
-    func renderedUserData(at index: Int) -> [String: String]{
+    func renderedUserData(at index: Int) -> NSDictionary {
         let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! UserCell
         let dict = cell.getDictFromModel()
-        return dict
+        return dict.toNSDictionary
     }
 }
 
@@ -138,11 +133,17 @@ extension UIViewController {
 }
 
 extension UserCell {
-     func getDictFromModel() -> [String: String]{
+     func getDictFromModel() -> [String: Any]{
         [
             "name": ul_name.text ?? "",
             "username": ul_username.text ?? "",
             "email": ul_email.text ?? "",
         ]
+    }
+}
+
+extension Dictionary {
+    var toNSDictionary : NSDictionary {
+        NSDictionary(dictionary: self, copyItems: true)
     }
 }
