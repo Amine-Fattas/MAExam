@@ -5,6 +5,7 @@
 - The projet contains 2 independant modules (Users, Tasks) that both depend on a Shared Module arranged verticaly (by feature).
 - Each module module contains layers that are arranged horizontaly (by dependency level).
 - The most recent update is in the _main_ branch.
+- Comment: For time constraints, The Caching implemntation is done with NSCache. Contrary to CoreData, It is not persistent (The cache is deleted when app terminates). It can be upgraded to CoreData easily in the future by changing just the implementation of the protocol _CacheStore_.
 
 ## Story 1 (Customer requests to see the list of users)
 
