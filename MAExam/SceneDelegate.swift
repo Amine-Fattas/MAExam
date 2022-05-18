@@ -27,8 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             httpClient: httpClient,
             cacheStore: cacheStore,
             urlString: USERS_URL,
-            onUserSelection: { [weak self] userId in
-                self?.showTask(of: userId)
+            onUserSelection: { [weak self] userId, name in
+                self?.showTask(of: userId, name: name)
         }))
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -42,11 +42,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    private func showTask(of userId: Int){
+    private func showTask(of userId: Int, name: String){
         let vc = TasksUIComposer.compose(httpClient: httpClient,
                                          cacheStore: cacheStore,
                                          urlString: TASKS_URL,
-                                         userId: String(userId))
+                                         userId: String(userId),
+                                         name: name)
         navigationController.pushViewController(vc, animated: true)
         print("Selected ID: ", userId)
     }

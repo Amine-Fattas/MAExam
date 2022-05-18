@@ -75,7 +75,8 @@ extension UsersVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter.onUserSelection(indexPath.row)
+        let user = presenter.users[indexPath.row]
+        presenter.onUserSelection(user.id, user.name)
     }
 }
 //MARK: - UsersView Delegate -

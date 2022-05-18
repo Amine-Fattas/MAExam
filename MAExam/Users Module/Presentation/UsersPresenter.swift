@@ -9,7 +9,7 @@ import Foundation
 
 class UsersPresenter {
     let title: String
-    let onUserSelection: (Int) -> Void
+    let onUserSelection: (Int, String) -> Void
     let interactor : UsersInteractorWithFallback
     var users : [UserItem] = []
     weak var listView: ListView?
@@ -17,7 +17,7 @@ class UsersPresenter {
     
     init(title: String,
          interactor: UsersInteractorWithFallback,
-         onUserSelection: @escaping (Int) -> Void) {
+         onUserSelection: @escaping (Int, String) -> Void) {
         self.title = title
         self.interactor = interactor
         self.onUserSelection = onUserSelection

@@ -11,14 +11,14 @@ class TasksUIComposer {
     static let TITLE = "Tasks"
     
     static func compose(httpClient: HTTPClient, cacheStore: CacheStore,
-                        urlString : String, userId: String) -> UIViewController{
+                        urlString : String, userId: String, name: String) -> UIViewController{
         let remoteInteractor = RemoteTasksInteractor(
             httpClient: httpClient,
             urlString: urlString + userId
         )
         let localInteractor = LocalTasksInteractor(cacheStore: cacheStore, KEY: TITLE+userId)
 
-        let presenter = TasksPresenter(title: TITLE,
+        let presenter = TasksPresenter(title: TITLE + " (\(name))",
                                        interactor: TasksInteractorWithFallback(
                                         primary: remoteInteractor,
                                         fallback: localInteractor))

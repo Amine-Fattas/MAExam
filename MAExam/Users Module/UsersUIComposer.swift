@@ -8,20 +8,22 @@
 import UIKit
 
 class UsersUIComposer {
+    static let TITLE = "Users"
+    
     static func compose(httpClient: HTTPClient,
                         cacheStore: CacheStore,
                         urlString : String,
-                        onUserSelection: @escaping (Int) -> Void) -> UIViewController{
+                        onUserSelection: @escaping (Int, String) -> Void) -> UIViewController{
         let remoteInteractor = RemoteUsersInteractor(
             httpClient: httpClient,
             urlString: urlString
         )
         let localInteractor = LocalUsersInteractor(cacheStore: cacheStore)
-        let onUserSelection = { userId in
-            onUserSelection(userId)
+        let onUserSelection = { userId, name in
+            onUserSelection(userId, name)
         }
         let presenter = UsersPresenter(
-            title: "Users",
+            title: TITLE,
             interactor: UsersInteractorWithFallback(primary: remoteInteractor,
                                                     fallback: localInteractor),
             onUserSelection: onUserSelection)
